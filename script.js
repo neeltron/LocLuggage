@@ -10,7 +10,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 function onLocationFound(e) {
   console.log(e.latlng['lat'])
   console.log(e.latlng['lng'])
-  fetch("https://locluggage-api.neeltron.repl.co/input?x=" + e.latlng['lat'])
+  fetch("https://locluggage-api.neeltron.repl.co/input?x=" + e.latlng['lat'] + "&y=" + e.latlng['lng'])
   .then(function (response) {
     return response.json();
   })
@@ -27,5 +27,4 @@ function onLocationError(e) {
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 map.locate({setView: true, maxZoom: 16});
-
   
