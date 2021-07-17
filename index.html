@@ -36,6 +36,7 @@
 			.bindPopup("You are within " + radius + " meters from this point").openPopup();
 		L.circle(e.latlng, radius).addTo(map);
     console.log(e.latlng['lat'])
+    console.log(e.latlng['lng'])
 	}
 	function onLocationError(e) {
 		alert(e.message);
